@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject completeLevelUI;
 
+    public GameObject failLevelUI;
+
     public void CompleteLevel()
     {
         completeLevelUI.SetActive(true);
@@ -21,6 +23,7 @@ public class GameManager : MonoBehaviour
         if (!gameHasEnded)
         {
             gameHasEnded = true;
+            failLevelUI.SetActive(true);
             Invoke("Restart", restartDelay);
         }
 
